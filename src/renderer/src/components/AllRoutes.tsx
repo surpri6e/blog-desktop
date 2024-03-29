@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { privateRoutes, publicRoutes } from '../routes'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../main'
-import NothingPage from '../pages/NothingPage/NothingPage'
+import SearchPage from '../pages/SearchPage/SearchPage'
 
 const AllRoutes = (): JSX.Element => {
   const [user, loading] = useAuthState(auth)
@@ -18,7 +18,7 @@ const AllRoutes = (): JSX.Element => {
         : privateRoutes.map((route) => (
             <Route element={<route.page />} path={route.path} key={route.path} />
           ))}
-      {loading ? <Route element={<></>} path="*" /> : <Route element={<NothingPage />} path="*" />}
+      {loading ? <Route element={<></>} path="*" /> : <Route element={<SearchPage />} path="*" />}
     </Routes>
   )
 }

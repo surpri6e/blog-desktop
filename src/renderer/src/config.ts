@@ -8,5 +8,3 @@ export const configFirebase: IConfigFirebase = {
   projectId: import.meta.env.VITE_APP_projectId,
   storageBucket: import.meta.env.VITE_APP_storageBucket
 }
-
-console.log(configFirebase)

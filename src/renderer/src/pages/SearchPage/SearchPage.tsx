@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
-import './NothingPage.scss'
+import './SearchPage.scss'
 
-const NothingPage = (): JSX.Element => {
+const SearchPage = (): JSX.Element => {
   return (
     <div className="nothing">
       <div className="_Container">
         <div className="nothing_body">
           <div className="other-text">
-            Этой страницы не существует. <Link to={'/a/surpri6e'}>Далее</Link>
+            Этой страницы не существует. <Link to={'/a/surpri6e'}>Далее</Link> aasdasdasd as dasd
           </div>
         </div>
       </div>
@@ -15,4 +15,4 @@ const NothingPage = (): JSX.Element => {
   )
 }
 
-export default NothingPage
+export default SearchPage
