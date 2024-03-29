@@ -1,13 +1,18 @@
-import { Link } from 'react-router-dom'
 import './SearchPage.scss'
 
+import Header from '@renderer/components/Header/Header'
+
 const SearchPage = (): JSX.Element => {
+  // const [value, loading, error] = useDocumentData<IFirebase>(
+  //   doc(database, 'users', nickname ? nickname : ' ') as DocumentReference<IFirebase>
+  // )
   return (
-    <div className="nothing">
+    <div className="search">
       <div className="_Container">
-        <div className="nothing_body">
-          <div className="other-text">
-            Этой страницы не существует. <Link to={'/a/surpri6e'}>Далее</Link> aasdasdasd as dasd
+        <div className="search_body">
+          <Header fixedNeeded={false} />
+          <div className="search_padding">
+            <input type="text" className="inputs" placeholder="Найти пользователя" />
           </div>
         </div>
       </div>

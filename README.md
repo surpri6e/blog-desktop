@@ -1,34 +1,9 @@
-# entry
+# Blog
 
-An Electron application with React and TypeScript
+I wanna do this project in web, desktop and mobile.
 
-## Recommended IDE Setup
+## Web - [here](https://github.com/surpri6e/blog)
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+## Desktop - [here](https://github.com/surpri6e/blog-desktop)
 
-## Project Setup
-
-### Install
-
-```bash
-$ npm install
-```
-
-### Development
-
-```bash
-$ npm run dev
-```
-
-### Build
-
-```bash
-# For windows
-$ npm run build:win
-
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
+## Mobile -

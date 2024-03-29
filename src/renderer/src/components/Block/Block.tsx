@@ -1,27 +1,14 @@
 import { FC } from 'react'
 import './Block.scss'
-import { IBlock, IFirebase } from '../../types/IFirebase'
-import BlockTools from '../BlockTools/BlockTools'
+import { IBlock } from '../../types/IFirebase'
 
 interface IBlockTools {
-  value: IFirebase
-  isYourProfile: boolean
   ind: number
 }
 
-const Block: FC<IBlock & IBlockTools> = ({
-  title,
-  date,
-  message,
-  isFixed,
-  value,
-  isYourProfile,
-  ind
-}) => {
+const Block: FC<IBlock & IBlockTools> = ({ title, date, message, isFixed, ind }) => {
   return (
     <div className="block" id={`${isFixed ? `anchor-${ind}` : ''}`}>
-      {isYourProfile ? <BlockTools ind={ind} value={value} /> : <></>}
-
       <div className="block_header">
         <a className="block_title">{title}</a>
         <div className="block_info">
