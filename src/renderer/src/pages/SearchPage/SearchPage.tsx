@@ -7,23 +7,24 @@ import { IFirebase } from '@renderer/types/IFirebase'
 import Loader from '@renderer/components/Loader/Loader'
 import { Card } from '@renderer/components/Card/Card'
 import { useState } from 'react'
+import SearchInput from '@renderer/components/SearchInput'
+import { useDebounce } from 'use-debounce'
 
 const SearchPage = (): JSX.Element => {
   const [userName, setUserName] = useState('')
-  // const [userNameDebounced] = useDebounce(userName, 150)
+  const [userNameDebounced] = useDebounce(userName, 300)
 
   const [values, loading, error] = useCollectionData<IFirebase>(
     query(
       collection(database, 'users') as Query<IFirebase, DocumentData>,
-
-      // Repair this because it do each rerender
+      // Sorting by name
       orderBy('name'),
-      startAt(userName),
-      endAt(`${userName}\uf8ff`)
+
+      // Borders for searching
+      startAt(userNameDebounced),
+      endAt(`${userNameDebounced}\uf8ff`)
     )
   )
-
-  console.log(values, userName)
 
   return (
     <div className="search">
@@ -31,18 +32,15 @@ const SearchPage = (): JSX.Element => {
         <div className="search_body">
           <Header fixedNeeded={false} />
           <div className="search_padding">
-            <input
-              type="text"
-              className="inputs"
-              placeholder="Найти пользователя"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-            />
+            {/* In a separate component so that there is no rerendering */}
+            <SearchInput userName={userName} setUserName={setUserName} />
           </div>
           {loading ? (
-            <Loader />
+            <div className="search_padding">
+              <Loader />
+            </div>
           ) : error || !values ? (
-            <div className="other-text">Что-то пошло не так.</div>
+            <div className="other-text other-text--center search_margin">Что-то пошло не так.</div>
           ) : (
             <div className="search_users">
               {values.length != 0 ? (
@@ -55,7 +53,9 @@ const SearchPage = (): JSX.Element => {
                   />
                 ))
               ) : (
-                <div className="other-text">Пользователей не найдено.</div>
+                <div className="other-text other-text--center search_margin">
+                  Пользователей не найдено.
+                </div>
               )}
             </div>
           )}

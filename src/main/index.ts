@@ -5,8 +5,12 @@ import icon from '../../resources/icon.png?asset'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1000,
+    height: 800,
+
+    minWidth: 900,
+    minHeight: 670,
+
     show: false,
     autoHideMenuBar: true,
 
@@ -17,9 +21,6 @@ function createWindow(): void {
       sandbox: false
     }
   })
-
-  mainWindow.webContents.openDevTools()
-  // mainWindow.setFullScreen(true)
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()

@@ -1,9 +1,5 @@
 @import '../../styles/vars.scss';
 
-.search_users {
-  width: 100%;
-}
-
 .card {
   cursor: pointer;
   display: flex;
@@ -43,6 +39,4 @@
 
 .card_about {
   font-size: 16px;
-
-  height: 50px;
 }
