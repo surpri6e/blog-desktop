@@ -50,6 +50,7 @@ const SearchPage = (): JSX.Element => {
                     imageUrl={elem.imageUrl}
                     name={`${elem.name.length > 21 ? `${elem.name.slice(0, 21)}...` : elem.name}`}
                     key={elem.imageUrl}
+                    uid={elem.uid}
                   />
                 ))
               ) : (

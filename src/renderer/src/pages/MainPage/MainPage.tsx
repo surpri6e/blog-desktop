@@ -39,6 +39,7 @@ const MainPage = (): JSX.Element => {
                 />
                 <Name name={value.name} />
                 <About about={value.about} />
+                <div className="other-text">Просмотрено раз: {value.watchers}</div>
               </div>
               <Blocks blocks={value.blocks} />
             </>

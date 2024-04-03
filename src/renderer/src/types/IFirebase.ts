@@ -14,6 +14,8 @@ export interface IBlock {
   date: string
   message: string
   isFixed: boolean
+  isPrivate: boolean
+  image?: string
 }
 
 export interface IName {
@@ -22,4 +24,6 @@ export interface IName {
 
 export interface IFirebase extends IAbout, IAvatar, IName {
   blocks: IBlock[]
+  uid: string
+  watchers: number
 }

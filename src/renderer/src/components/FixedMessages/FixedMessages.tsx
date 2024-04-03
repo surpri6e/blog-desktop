@@ -18,11 +18,7 @@ const FixedMessages: FC<IFixedMessages> = ({ blocks }) => {
 
   return (
     <div className="fixed-messages">
-      <div className="fixed-messages_text">
-        <a href={`#anchor-${blocksMain[blockIndex].indexForLink}`}>
-          {blocksMain[blockIndex].titleOfBlock}
-        </a>
-      </div>
+      <div className="fixed-messages_text">{blocksMain[blockIndex].titleOfBlock}</div>
       <div className="fixed-messages_buttons">
         {blockIndex === 0 ? (
           <></>

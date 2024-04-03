@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom'
 
 interface ICard extends IName, IAbout {
   imageUrl: string
+  uid: string
 }
 
-export const Card: FC<ICard> = ({ about, imageUrl, name }) => {
+export const Card: FC<ICard> = ({ about, imageUrl, name, uid }) => {
   return (
-    <Link to={`/a/${name}`} className="card">
+    <Link to={`/a/${uid}`} className="card">
       <div className="card_avatar">
         <img src={imageUrl} alt="avatar" />
       </div>

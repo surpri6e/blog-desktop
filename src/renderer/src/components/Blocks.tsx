@@ -17,12 +17,14 @@ const Blocks: FC<IBlocks> = ({ blocks }) => {
             message={elem.message}
             date={elem.date}
             isFixed={elem.isFixed}
+            isPrivate={elem.isPrivate}
+            image={elem.image}
             key={ind}
             ind={ind}
           />
         ))
       ) : (
-        <div className="other-text other-text--center">Постов тут нет:{'('}</div>
+        <div className="other-text other-text--center">Постов тут нет</div>
       )}
     </div>
   )
